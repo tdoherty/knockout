@@ -1,0 +1,129 @@
+<div id="MerchantProfile">
+    <table>
+        <tbody>
+        <tr>
+            <td class="Label">
+                Merchant Number:
+            </td>
+            <td class="Label">
+                DBA:
+            </td>
+            <td class="Label">
+                Status:
+            </td>
+            <td class="Label">
+                Merchant Type:
+            </td>
+            <td class="Label">
+                Portfolio:
+            </td>
+            <td class="Label">
+                SSN#:
+            </td>
+        </tr>
+        <tr>
+            <td valign="Middle" class="AlternatingField">
+                <div class="Section" id="divContainer">
+                    <a href="javascript:void(0);" data-bind="text: MerchantNumber"></a>
+                    <a class="toolTip" href="#"><span class="dotdotdot"></span></a>
+                    <div class="merchant-details-tooltip tooltip-z-index-top">
+                        <div data-bind="text: DbaName"></div>
+                        <div data-bind="text: LocationAddress1"></div>
+                        <div data-bind="text: LocationAddress2"></div>
+                        <div data-bind="text: LocationCity"></div>
+                        <div data-bind="text: PhoneNumber">${}</div>
+                    </div>
+                </div>
+            </td>
+            <td class="AlternatingField" data-bind="text: DbaName">
+            </td>
+            <td class="AlternatingField" data-bind="text: ApplicationStatus.Name">
+            </td>
+            <td class="AlternatingField">
+                RETAIL
+            </td>
+            <td class="AlternatingField">
+            </td>
+            <td class="AlternatingField" data-bind="text: TaxNumber">
+            </td>
+        </tr>
+        <tr>
+            <td class="Label">
+                Date Opened:
+            </td>
+            <td class="Label">
+                Date Closed:
+            </td>
+            <td class="Label">
+                Merchant Group
+            </td>
+            <td class="Label">
+                # of Merchants in group
+            </td>
+            <td class="Label">
+                Priority
+            </td>
+            <td class="Label">
+                Restructure
+            </td>
+        </tr>
+        <tr>
+            <td class="AlternatingField" data-bind="text: OpenDate">
+            </td>
+            <td class="AlternatingField" data-bind="text: CloseDate, style: { color: CloseDate ? 'red' : 'black', fontWeight: CloseDate ? 'bold' : 'normal' }">
+            </td>
+            <td class="AlternatingField">
+                &nbsp;
+            </td>
+            <td class="AlternatingField">
+                &nbsp;
+            </td>
+            <td class="AlternatingField" data-bind="text: RushPriority() ? 'Rush' : 'Normal'">
+            </td>
+            <td class="AlternatingField">
+                <input type="checkbox" id="AuthorizedSigner" class="field" data-bind="checked: Restructured"  disabled />
+            </td>
+        </tr>
+        <tr>
+            <td class="Label">
+                Rep Sales Number:
+            </td>
+            <td class="Label">
+                Rep Name:
+            </td>
+            <td class="Label">
+                Agent Sales Number:
+            </td>
+            <td class="Label">
+                Agent Name:
+            </td>
+            <td class="Label">
+                ISO Sales Number:
+            </td>
+            <td class="Label">
+                ISO Name:
+            </td>
+        </tr>
+        <tr>
+            <td class="AlternatingField">
+                <span data-bind="text: SalesRep.SalesNumber"></span>
+                <span data-bind="template: { name: 'addressToolTip', if: SalesRep, data: SalesRep }"></span>
+            </td>
+            <td class="AlternatingField" data-bind="text: SalesRep.Name">
+            </td>
+            <td class="AlternatingField">
+                <span data-bind="text: Agent.SalesNumber"></span>
+                <span data-bind="template: { name: 'addressToolTip', if: Agent, data: Agent }"></span>
+            </td>
+            <td class="AlternatingField" data-bind="text: Agent.Name">
+            </td>
+            <td class="AlternatingField">
+                <span data-bind="text: Iso.SalesNumber"></span>
+                <span data-bind="template: { name: 'addressToolTip', if: Iso, data: Iso }"></span>
+            </td>
+            <td class="AlternatingField" data-bind="text: Iso.Name">
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>

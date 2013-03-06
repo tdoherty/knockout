@@ -1,0 +1,24 @@
+<div class="principal">
+    <div class="FirstName" data-bind="text: FirstName"></div>
+    <div class="LastName" data-bind="text: LastName"></div>
+    <div class="Address" data-bind="text: Address"></div>
+    <div class="City" data-bind="text: City"></div>
+    <div class="State" data-bind="text: State"></div>
+    <div class="Zip" data-bind="text: Zip"></div>
+    <div class="PhoneNumber" data-bind="text: PhoneNumber"></div>
+    <div class="BirthDate" data-bind="text: BirthDate"></div>
+    <div class="JobTitle" data-bind="text: JobTitle"></div>
+    <div class="DriversLicenseNumber" data-bind="text: DriversLicenseNumber"></div>
+    <div class="DriversLicenseState" data-bind="text: DriversLicenseState"></div>
+    <div class="SocialSecurityNumber" data-bind="text: SocialSecurityNumber"></div>
+    <div class="OwnershipPercentage" data-bind="text: OwnershipPercentage">%</div>
+    <div class="AuthorizedSigner">
+        <input type="checkbox" id="AuthorizedSigner" class="field" disabled data-bind="checked: AuthorizedSigner"/>
+    </div>
+    <div class="Delete">
+        <div class="deleteThis" data-bind="click: $parent.onRemovePrincipal" />
+    </div>
+    <div class="Edit">
+        <button class="editThis" data-bind="click: $parent.onEditPrincipal">Edit</button>
+    </div>
+</div>

@@ -1,0 +1,137 @@
+<table cellspacing="1" cellpadding="0" border="0" style="width: auto">
+    <tbody>
+    <tr>
+        <td class="Label">
+            Corporate Name
+        </td>
+        <td class="Field" data-bind="text: LegalBusinessName">
+        </td>
+        <td class="Label">
+            DBA Name
+        </td>
+        <td class="Field" data-bind="text: DbaName">
+        </td>
+    </tr>
+    <tr>
+        <td class="Label">
+            Business Location
+        </td>
+        <td class="Field">
+
+            <fieldset>
+                <legend>Address</legend>
+                <table style="width: auto">
+                    <tbody>
+                    <tr>
+                        <td colspan="6" class="Field" data-bind="text: LocationAddress1() + ' ' + (LocationAddress2() || '')">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="Label">
+                            City:
+                        </td>
+                        <td class="Field" data-bind="text: LocationCity">
+                        </td>
+                        <td class="Label">
+                            State:
+                        </td>
+                        <td class="Field" data-bind="text: LocationState">
+                        </td>
+                        <td class="Label">
+                            Zip:
+                        </td>
+                        <td class="Field" data-bind="text: LocationZipCode">
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </fieldset>
+
+        </td>
+        <td class="Label">
+            Mailing Location
+        </td>
+        <td class="Field">
+
+            <fieldset>
+                <legend>Address</legend>
+                <table style="width: auto">
+                    <tbody>
+                    <tr>
+                        <td colspan="6" class="Field" data-bind="text: MailingAddress1() + ' ' + (MailingAddress2() || '')">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="Label">
+                            City:
+                        </td>
+                        <td class="Field" data-bind="text: MailingCity">
+                        </td>
+                        <td class="Label">
+                            State:
+                        </td>
+                        <td class="Field" data-bind="text: MailingState">
+                        </td>
+                        <td class="Label">
+                            Zip:
+                        </td>
+                        <td class="Field" data-bind="text: MailingZipCode">
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </fieldset>
+
+        </td>
+    </tr>
+    <tr>
+        <td class="Label">
+            Business Phone #
+        </td>
+        <td class="Field" data-bind="text: PhoneNumber">
+        </td>
+        <td class="Label">
+            Federal Tax ID #
+        </td>
+        <td class="Field" data-bind="text: TaxNumber">
+        </td>
+    </tr>
+    <tr>
+        <td class="Label">
+            Contact Name
+        </td>
+        <td class="Field" data-bind="text: ContactName">
+        </td>
+        <td class="Label">
+            Fax #
+        </td>
+        <td class="Field" data-bind="text: FaxNumber">
+        </td>
+    </tr>
+    <tr>
+        <td class="Label">
+            Date Opened
+        </td>
+        <td class="Field" data-bind="text: OpenDate">
+        </td>
+        <td class="Label">
+            Date Closed
+        </td>
+        <td class="Field" data-bind="text: CloseDate, css: { warning: CloseDate }">
+        </td>
+    </tr>
+    <tr>
+        <td class="Label">
+            Email Address
+        </td>
+        <td class="Field" data-bind="text: Email">
+        </td>
+        <td>
+            Reason Closed
+        </td>
+        <td style="font-weight: bold; font-size: 10pt; color: Red;">
+
+        </td>
+    </tr>
+    </tbody>
+</table>

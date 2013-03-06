@@ -1,0 +1,172 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Merchant Summary</title>
+    <link href="Content/Site.css" rel="stylesheet" type="text/css"/>
+    <link href="Content/MainStyleSheet.css" rel="stylesheet" type="text/css"/>
+</head>
+
+<body>
+<div id="MasterContainer" align="center">
+    <table id="masterTable" cellspacing="0" cellpadding="0">
+        <tr>
+            <td id="headingContainer" class="HeadingContainer">
+                <div style="float: left; margin-left: 10px; text-align: left;">
+                    <div style="float: left; margin-right: 5px; margin-top: 3px;">
+                       <input type="text" id="txtMID" data-bind="value: mid, valueUpdate: 'afterkeydown'"/>
+                    </div>
+                    <div style="float: left;">
+                        <button id="loadMerchant" data-bind="click: onLoadMerchant">Load Merchant</button>
+                    </div>
+                </div>
+                <div style="float: right; margin-right: 20px; text-align: left;">
+                    <input type="submit" value="Sample Button"/>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td id="headerContainer">
+                <div id="horizontalSlider">
+                    <div id="profileContainer">
+                        <div id="merchantContainer" data-bind="template: { name: 'merchantInfo', if: model, data: model, afterRender: onAfterRender }"></div>
+                    </div>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td id="headingBottom">
+                <img id="toggle" src="images/uparrow.png" />
+            </td>
+        </tr>
+    </table>
+    <table id="masterTable" cellspacing="0" cellpadding="0">
+        <tr>
+            <td id="menuContainer">
+                <div id="verticalSlider">
+                    <div id="LeftMenuContainer">
+                        <div class="LeftMenuItem">
+                            <a class="LeftMenuImage"></a>
+                            <a class="LeftMenuText" href="javascript:void(0);">Menu Item #1</a>
+                        </div>
+                        <div class="LeftMenuItem">
+                            <a class="LeftMenuImage"></a>
+                            <a class="LeftMenuText" href="javascript:void(0);">Menu Item #2</a>
+                        </div>
+                        <div class="LeftSubMenuContainer">
+                            <div class="LeftSubMenuItem">
+                                <a href="javascript:void(0);">SubMenu Item #1</a>
+                            </div>
+                            <div class="LeftSubMenuItem">
+                                <a href="javascript:void(0);">SubMenu Item #2</a>
+                            </div>
+                            <div class="LeftSubMenuItem">
+                                <a href="javascript:void(0);">SubMenu Item #3</a>
+                            </div>
+                        </div>
+                        <div class="LeftMenuItem">
+                            <a class="LeftMenuImage"></a>
+                            <a class="LeftMenuText" href="javascript:void(0);">Menu Item #3</a>
+                        </div>
+                        <div class="LeftMenuItem">
+                            <a class="LeftMenuImage"></a>
+                            <a class="LeftMenuText" href="javascript:void(0);">Menu Item #4</a>
+                        </div>
+                        <div class="LeftMenuItem">
+                            <a class="LeftMenuImage">
+                            </a><a class="LeftMenuText" href="javascript:void(0);">Menu Item #5</a>
+                        </div>
+                    </div>
+                </div>
+            </td>
+            <td id="verticalTrigger">
+                &nbsp;
+            </td>
+            <td id="bodyContainer">
+                <div id="bodyWrapper">
+                    <div id="bodyDiv" class="Form Grid">
+
+                        <table class="Section" cellspacing="0" cellpadding="0">
+                            <tbody>
+                            <tr class="HeaderRow">
+                                <td class="HeaderLeft"></td>
+                                <td class="Header">
+                                    <div class="HeaderContainer"></div>
+                                    <div class="HeaderContent">Merchant Summary</div>
+                                    <div class="CloseButton">
+                                </td>
+                                <td class="HeaderRight"></td>
+                            </tr>
+                            <tr class="BodyRow">
+                                <td class="BodyLeft"></td>
+                                <td class="Body">
+                                    <fieldset id="mFieldSet" style="margin-top: 10px;">
+                                        <legend>
+                                            Merchant Information
+                                        </legend>
+                                        <div id="merchants" data-bind="template: { name: 'contactInfo', if: model, data: model }"></div>
+                                    </fieldset>
+                                    <fieldset id="pFieldSet" style="margin-top: 10px;">
+                                        <legend>
+                                            Principals
+                                            <button data-bind="click: onAddPrincipal">+</button>
+                                        </legend>
+                                        <div id="principalsList">
+                                            <div class="principal header">
+                                                <div class="FirstName" data-bind="click: onSort"><span>First</span><span
+                                                        class="sort-indicator"></span></div>
+                                                <div class="LastName" data-bind="click: onSort"><span>Last</span><span
+                                                        class="sort-indicator"></span></div>
+                                                <div class="Address" data-bind="click: onSort"><span>Address</span><span
+                                                        class="sort-indicator"></span></div>
+                                                <div class="City" data-bind="click: onSort"><span>City</span><span class="sort-indicator"></span>
+                                                </div>
+                                                <div class="State" data-bind="click: onSort"><span>State</span><span
+                                                        class="sort-indicator"></span></div>
+                                                <div class="Zip" data-bind="click: onSort"><span>Zip</span><span class="sort-indicator"></span>
+                                                </div>
+                                                <div class="PhoneNumber" data-bind="click: onSort"><span>Phone</span><span
+                                                        class="sort-indicator"></span>
+                                                </div>
+                                                <div class="BirthDate" data-bind="click: onSort"><span>DOB</span><span
+                                                        class="sort-indicator"></span></div>
+                                                <div class="JobTitle" data-bind="click: onSort"><span>Title</span><span class="sort-indicator">
+                                                </div>
+                                                <div class="DriversLicenseNumber" data-bind="click: onSort"><span>DL Number</span><span
+                                                        class="sort-indicator"></span></div>
+                                                <div class="DriversLicenseState" data-bind="click: onSort"><span>DL State</span><span
+                                                        class="sort-indicator"></span></div>
+                                                <div class="SocialSecurityNumber" data-bind="click: onSort"><span>SSN</span><span
+                                                        class="sort-indicator"></span></div>
+                                                <div class="OwnershipPercentage" data-bind="click: onSort"><span>Ownership</span><span
+                                                        class="sort-indicator"></span></div>
+                                                <div class="AuthorizedSigner"><span>Signer?</span><span
+                                                        class="sort-indicator"></span></div>
+                                                <div class="Edit"></div>
+                                                <div class="Delete"></div>
+                                            </div>
+                                            <div id="pList" data-bind="template: { name: 'principals', foreach: model.data, afterRender: onAfterRender }"></div>
+                                        </div>
+                                        <div data-bind="template: { name: 'principalAE', if: currentPrincipal, data: currentPrincipal }" id=""></div>
+                                    </fieldset>
+
+                                </td>
+                                <td class="BodyRight"></td>
+                            </tr>
+                            <tr class="FooterRow">
+                            </tbody>
+                        </table>
+                    </div>
+                    <div style="height:250px;"></div>
+                </div>
+            </td>
+        </tr>
+    </table>
+    <div id="footerContainer" style="text-align: center;">
+        <a href="#">Footer link #1</a> <a href="#">Footer link #2</a> <a href="#">Footer link #3</a>
+    </div>
+</div>
+
+<script type="text/javascript" data-main="Scripts/main" src="Scripts/require.js"></script>
+
+</body>
+</html>
